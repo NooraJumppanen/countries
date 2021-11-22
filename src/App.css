@@ -1,14 +1,40 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.countries {
+  background-color: gold;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.flag {
+  height: 10vh;
+  border: 1px solid grey;
+  margin: 15px;
+}
+
+.country {
+  border: 1px solid goldenrod;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px goldenrod;
+  width: 30vw;
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+}
+
+.country:hover {
+  box-shadow: 10px 10px 5px goldenrod;
+}
+
+h2,
+p {
+  font-family: "Montserrat", sans-serif;
+  margin: 15px;
 }
