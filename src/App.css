@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap");
 
 * {
   margin: 0;
@@ -6,15 +6,38 @@
   box-sizing: border-box;
 }
 
-.countries {
+body {
   background-color: gold;
+}
+
+.loadingIcon {
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
+  color: darkgrey;
+}
+
+.header {
+  text-align: center;
+}
+
+input {
+  border: 2px solid rgb(99, 72, 6);
+  border-radius: 5px;
+  width: 250px;
+  font-size: large;
+  padding: 4px;
+}
+
+.countries {
   display: grid;
   grid-template-columns: auto auto auto;
   padding: 10px;
 }
 
 .flag {
-  height: 10vh;
+  max-height: 10vh;
+  max-width: 40vw;
   border: 1px solid grey;
   margin: 15px;
 }
@@ -23,18 +46,77 @@
   border: 1px solid goldenrod;
   border-radius: 5px;
   box-shadow: 5px 5px 5px goldenrod;
-  width: 30vw;
+  width: 22vw;
   padding: 10px;
   margin: 10px;
   background-color: white;
+  text-align: center;
 }
 
 .country:hover {
   box-shadow: 10px 10px 5px goldenrod;
 }
 
+h1,
 h2,
 p {
   font-family: "Montserrat", sans-serif;
   margin: 15px;
+}
+
+h1 {
+  font-size: 3rem;
+  color: rgb(99, 72, 6);
+  font-family: "Anton", sans-serif;
+}
+
+h2 {
+  background-color: darkgoldenrod;
+  padding: 5px;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+@media (min-width: 320px) {
+  .countries {
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  .country {
+    width: 90vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .countries {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  .country {
+    width: 45vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .countries {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+
+  .country {
+    width: 30vw;
+  }
+}
+
+@media (min-width: 1366px) {
+  .countries {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
+
+  .country {
+    width: 22vw;
+  }
 }
