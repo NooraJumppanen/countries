@@ -14,7 +14,7 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 10vh;
-  color: darkgrey;
+  color: rgb(99, 72, 6);
 }
 
 .header {
@@ -77,6 +77,39 @@ h2 {
   border-radius: 5px;
   text-align: center;
 }
+
+ul {
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  padding: 20px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  color: rgb(99, 72, 6);
+}
+
+.homepage {
+  text-align: center;
+}
+
+.countrySingle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+  width: 50vw;
+  height: 20vh;
+  border-radius: 10px;
+  margin: auto;
+}
+
 @media (min-width: 320px) {
   .countries {
     display: grid;
