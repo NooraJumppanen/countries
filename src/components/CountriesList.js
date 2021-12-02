@@ -21,7 +21,6 @@ class CountriesList extends Component {
         this.setState({
           searchInput: e.target.value,
         });
-        console.log(this.state.searchInput);
       };
     
       render() {
@@ -31,13 +30,15 @@ class CountriesList extends Component {
     
         if(!this.state.isLoading){
         return (
-      <>
-      <div className="header">
-    <h1>Countries</h1>
-      <input type="text" name="search" placeholder="search by country name" onChange={this.searchHandler}/>
-      </div>
+        <main>
+
+        <div className="header">
+        <h1>Countries</h1>
+        <input type="text" name="search" placeholder="search by country name" onChange={this.searchHandler}/>
+        <p>Click a country card to get weather infomation for the country's capital.</p>
+        </div>
     
-      <div className="countries">
+        <div className="countries">
         {this.state.data
         .filter(c => {
           return c.name
@@ -45,9 +46,10 @@ class CountriesList extends Component {
           .includes(this.state.searchInput.toLowerCase());
         })
         .map(c => (<CountryCard {...c} key={c.name} />
-        ))}
-    </div>
-      </>
+        ))};
+        </div>
+        
+        </main>
     )}
     }
     }

@@ -3,7 +3,9 @@ import './App.css';
 import CountriesList from './components/CountriesList';
 import Home from './components/Home';
 import CountrySingle from './components/CountrySingle';
-import { BrowserRouter, Link, Routes, Route, useParams} from 'react-router-dom';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import { BrowserRouter, Routes, Route, useParams} from 'react-router-dom';
 
 const RouteWrapper = (props) => {
   const params = useParams();
@@ -14,22 +16,16 @@ const RouteWrapper = (props) => {
 const App = () => {
   return (
     <BrowserRouter>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/countries">Countries</Link>
-          </li>
-        </ul>
-      </nav>
-        
+      
+      <Header/>
+       
       <Routes>
         <Route index element={<Home/>}/>
         <Route path="/countries" element={<CountriesList/>}/>
         <Route path="/countries/:name" element={<RouteWrapper/>}/>
       </Routes>
+     
+      <Footer/>
     </BrowserRouter>
   );
 };

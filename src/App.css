@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap");
 
+:root {
+  --text-color-brown: rgb(99, 72, 6);
+  --shadow-color-golden: goldenrod;
+  --h2-background-color-darkgolden: darkgoldenrod;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +20,7 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 10vh;
-  color: rgb(99, 72, 6);
+  color: var(--text-color-brown);
 }
 
 .header {
@@ -22,30 +28,31 @@ body {
 }
 
 input {
-  border: 2px solid rgb(99, 72, 6);
+  border: 2px solid var(--text-color-brown);
   border-radius: 5px;
   width: 250px;
   font-size: large;
-  padding: 4px;
+  padding: 6px;
 }
 
 .countries {
   display: grid;
   grid-template-columns: auto auto auto;
   padding: 10px;
+  margin-bottom: 10vh;
 }
 
 .flag {
   max-height: 10vh;
   max-width: 40vw;
-  border: 1px solid grey;
+  border: 0.5px solid grey;
   margin: 15px;
 }
 
 .country {
-  border: 1px solid goldenrod;
+  border: 1px solid var(--shadow-color-golden);
   border-radius: 5px;
-  box-shadow: 5px 5px 5px goldenrod;
+  box-shadow: 5px 5px 5px var(--shadow-color-golden);
   width: 22vw;
   padding: 10px;
   margin: 10px;
@@ -54,7 +61,7 @@ input {
 }
 
 .country:hover {
-  box-shadow: 10px 10px 5px goldenrod;
+  box-shadow: 10px 10px 5px var(--shadow-color-golden);
 }
 
 h1,
@@ -66,12 +73,12 @@ p {
 
 h1 {
   font-size: 3rem;
-  color: rgb(99, 72, 6);
+  color: var(--text-color-brown);
   font-family: "Anton", sans-serif;
 }
 
 h2 {
-  background-color: darkgoldenrod;
+  background-color: var(--h2-background-color-darkgolden);
   padding: 5px;
   color: white;
   border-radius: 5px;
@@ -92,31 +99,98 @@ a {
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
-  color: rgb(99, 72, 6);
+  color: var(--text-color-brown);
 }
 
 .homepage {
   text-align: center;
 }
 
+.countrySingleWrapper {
+  display: flex;
+  justify-content: center;
+}
+
 .countrySingle {
+  border: 1px solid var(--shadow-color-golden);
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px var(--shadow-color-golden);
+  width: 22vw;
+  padding: 10px;
+  margin: 20px;
+  background-color: white;
+  text-align: center;
+}
+
+.weatherWrapper {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.smallWeatherWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: beige;
-  width: 50vw;
-  height: 20vh;
-  border-radius: 10px;
-  margin: auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: lightblue;
 }
 
-@media (min-width: 320px) {
+.temperature {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.buttonWrapper a:hover {
+  background-color: var(--h2-background-color-darkgolden);
+}
+
+.buttonWrapper a {
+  background-color: var(--text-color-brown);
+  color: white;
+  border-radius: 4px;
+  padding: 5px;
+  margin: 10px;
+  box-shadow: 5px 5px 5px var(--shadow-color-golden);
+}
+
+header {
+  background-color: white;
+  min-height: 10vh;
+  color: var(--text-color-brown);
+  text-align: center;
+  padding: 15px;
+  width: 100vw;
+  box-shadow: 0px 5px 5px var(--shadow-color-golden);
+}
+
+footer {
+  background-color: white;
+  min-height: 10vh;
+  color: var(--text-color-brown);
+  text-align: center;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+}
+
+@media (min-width: 280px) {
   .countries {
     display: grid;
     grid-template-columns: auto;
   }
 
-  .country {
+  .country,
+  .countrySingle {
     width: 90vw;
   }
 }
@@ -127,8 +201,10 @@ a {
     grid-template-columns: auto auto;
   }
 
-  .country {
+  .country,
+  .countrySingle {
     width: 45vw;
+    min-height: 40vh;
   }
 }
 
@@ -138,8 +214,10 @@ a {
     grid-template-columns: auto auto auto;
   }
 
-  .country {
+  .country,
+  .countrySingle {
     width: 30vw;
+    min-height: 30vh;
   }
 }
 
@@ -149,7 +227,8 @@ a {
     grid-template-columns: auto auto auto auto;
   }
 
-  .country {
+  .country,
+  .countrySingle {
     width: 22vw;
   }
 }

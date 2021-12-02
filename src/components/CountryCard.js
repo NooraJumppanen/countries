@@ -9,14 +9,11 @@ const CountryCard = ({name, capital, languages, population, flags}) => {
           key={name}>
           <h2>{name}</h2>
           <p><strong>Capital:</strong> {capital}</p>
-          <p><strong>Population:</strong> <NumberFormat value={
-population} displayType={"text"} thousandSeparator={true}/></p> 
+          <p><strong>Population:</strong> <NumberFormat value={population} displayType={"text"} thousandSeparator={true}/></p> 
           <p><strong>Language(s):</strong>{languages.map((lang, i) => (<span key={i}> {lang.name} </span>))}</p>
-          <img src={
-flags.svg} alt={name} className="flag"/>
+          <img src={flags.svg} alt={name} className="flag"/>
         </div>
         </Link>
         )}
-    
 
 export default CountryCard;
